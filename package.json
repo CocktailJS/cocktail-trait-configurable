@@ -1,0 +1,38 @@
+{
+  "name": "cocktail-trait-configurable",
+  "version": "0.0.1",
+  "description": "Provides configurable method to set properties on host class by a given object",
+  "main": "lib/Configurable",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CocktailJS/cocktail-trait-configurable"
+  },
+  "keywords": [
+    "configurable",
+    "trait",
+    "cocktailjs"
+  ],
+  "author": {
+    "name": "Maximiliano Fierro",
+    "email": "elmasse@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cocktail": "~0.4.6"
+  },
+  "devDependencies": {
+    "grunt-simple-mocha": "~0.4.0",
+    "chai": "1.4.2",
+    "mocha": "1.8.1",
+    "grunt-mocha": "0.2.1",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt": "~0.4.1",
+    "sinon-chai": "~2.3.1",
+    "sinon": "~1.6.0",
+    "grunt-cli": "~0.1.9"
+  }
+}
