@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CocktailJS/cocktail-trait-configurable.png?branch=master)](https://travis-ci.org/CocktailJS/cocktail-trait-configurable)
+
 # cocktail-trait-configurable
 ## A [CocktailJS](http://cocktailjs.github.io) Trait Extension
 
@@ -48,7 +50,11 @@ var MyClass = require('./MyClass'),
 obj = new MyClass();
 
 
-obj.configure({property1: 'value from options', property2: false, discarded: 'this should be discarded!'});
+obj.configure({
+    property1: 'value from options', 
+    property2: false, 
+    discarded: 'this should be discarded!'
+});
 
 console.log(obj.getProperty1()); //'value from options'
 console.log(obj.getProperty2()); //false
