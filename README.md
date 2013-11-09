@@ -34,6 +34,11 @@ cocktail.mix({
     '@properties': {
     	property1: 'default value',
     	property2: 0
+    },
+
+    constructor: function(config) {
+        //we can use configurable method in the constructor
+        this.configure(config);
     }
     
 });
@@ -45,19 +50,28 @@ index.js
 ````javascript
 
 var MyClass = require('./MyClass'),
-    obj;
+    options, obj, obj2;
 
-obj = new MyClass();
-
-
-obj.configure({
+options = {
     property1: 'value from options', 
     property2: false, 
     discarded: 'this should be discarded!'
 });
 
+obj = new MyClass();
+
+//use the configure method publicly
+obj.configure(options);
+
 console.log(obj.getProperty1()); //'value from options'
 console.log(obj.getProperty2()); //false
+
+//or in the constructor
+obj2 = new MyClass(options);
+
+console.log(obj2.getProperty1()); //'value from options'
+console.log(obj2.getProperty2()); //false
+
 
 ````
 
