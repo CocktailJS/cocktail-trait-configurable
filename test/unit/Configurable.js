@@ -16,12 +16,44 @@ describe('Configurable Trait Unit Test', function(){
 
         ConfiguredClass = cocktail.mix({
             '@as': 'class',
-            '@traits': [Configurable]
+            '@traits': [Configurable],
+            '@properties': {value: 1}
         });
         
         it('should provide `configurable` method on host class', function(){
             var sut = new ConfiguredClass();
             expect(sut).to.respondTo('configure');
+        });
+
+        it('should accept {} as a valid param in configure method', function(){
+            var sut = new ConfiguredClass(),
+                options = {};
+
+            sut.configure(options);
+        });
+
+        it('should accept no params or any non-object param in configure method', function(){
+            var sut = new ConfiguredClass(),
+                untouched = new ConfiguredClass();
+
+            sut.configure();
+            expect(sut).to.be.eql(untouched);
+
+            sut.configure(function(){});
+            expect(sut).to.be.eql(untouched);
+
+            sut.configure(true);
+            expect(sut).to.be.eql(untouched);
+
+            sut.configure(1);
+            expect(sut).to.be.eql(untouched);
+
+            sut.configure('string');
+            expect(sut).to.be.eql(untouched);
+
+            sut.configure({value: 10});
+            expect(sut).to.not.be.eql(untouched);
+
         });
     });
 
