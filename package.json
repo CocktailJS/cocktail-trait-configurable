@@ -1,6 +1,6 @@
 {
   "name": "cocktail-trait-configurable",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Provides configurable method to set properties on host class by a given object",
   "main": "lib/Configurable",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "cocktail": "~0.5.1"
+    "cocktail": "~0.6.0"
   },
   "devDependencies": {
     "grunt-simple-mocha": "~0.4.0",
