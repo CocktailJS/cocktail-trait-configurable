@@ -76,6 +76,69 @@ console.log(obj2.getProperty2()); //false
 
 ````
 
+### Configuring the Configurable Trait 
+
+Since `version 1.1.0` we can use Configurable.withOptions to return a configured Configurable Trait.
+This returns a trait that will look into the given options for the setter name given a key. If the key is not found, then it will default to set{Key} method.
+
+**Example:**
+The class will use `addItems` instead of *setItems* since we want to add items to our items properties and will allow to pass an array or a single element.
+
+MyClass.js
+
+````javascript
+
+var cocktail     = require('cocktail'),
+    Configurable = require('cocktail-trait-configurable');
+    
+cocktail.mix({
+    '@exports': module,
+    '@as'     : 'class',
+
+    '@traits' : [
+        Configurable.withOptions({ items: 'addItems' })
+    ],
+    
+    '@properties': {
+        prop: 'default value'
+    },
+
+    constructor: function() {
+        this.items = [];
+    },
+
+    addItems: function (items) {
+        this.items.concat(items);
+    }
+
+});
+
+````
+
+index.js
+
+````javascript
+
+var MyClass = require('./MyClass'),
+    options, obj, obj2;
+
+options = {
+    prop: 'value from options', 
+    discarded: 'this should be discarded!',
+    items: [1,2,3,4]
+});
+
+obj = new MyClass();
+
+//use the configure method publicly
+obj.configure(options);
+
+console.log(obj.getProp()); //'value from options'
+console.log(obj.items); // [1,2,3,4]
+
+````
+
+
 ### API
 
 The following methods will be publicly available on the host class:

@@ -1,13 +1,8 @@
 'use strict';
 
-var chai = require("chai"),
-    // sinon = require("sinon"),
-    sinonChai = require("sinon-chai"),
-    expect = chai.expect,
+var expect = require("chai").expect,
     cocktail = require('cocktail'),
     Configurable = require('../../lib/Configurable');
-
-chai.use(sinonChai);
 
 describe('Configurable Trait Unit Test', function(){
 
@@ -138,9 +133,6 @@ describe('Configurable Trait Unit Test', function(){
 
         });
 
-
     });
-
-
 
 });
