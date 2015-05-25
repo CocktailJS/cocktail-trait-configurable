@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/CocktailJS/cocktail-trait-configurable.png?branch=master)](https://travis-ci.org/CocktailJS/cocktail-trait-configurable)
-[![NPM version](https://badge.fury.io/js/cocktail-trait-configurable.png)](http://badge.fury.io/js/cocktail-trait-configurable)
-
 # cocktail-trait-configurable
 ## A [CocktailJS](http://cocktailjs.github.io) Trait Extension
+
+[![Build Status](https://travis-ci.org/CocktailJS/cocktail-trait-configurable.svg?branch=master)](https://travis-ci.org/CocktailJS/cocktail-trait-configurable)
+[![NPM version](https://badge.fury.io/js/cocktail-trait-configurable.svg)](http://badge.fury.io/js/cocktail-trait-configurable)
 
 A trait to add `configure(options)` method that will call setters on each options key. 
 
