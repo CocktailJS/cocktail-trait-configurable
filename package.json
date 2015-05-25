@@ -1,6 +1,6 @@
 {
   "name": "cocktail-trait-configurable",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Provides configurable method to set properties on host class by a given object",
   "main": "lib/Configurable",
   "scripts": {
